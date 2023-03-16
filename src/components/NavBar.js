@@ -1,12 +1,13 @@
 import React from "react";
+import {NavLink} from "react-router-dom"
 
 function NavBar() {
     return (
         <div>
             <h1>Navigation</h1>
-            <a href="#">All Tasks</a>
-            <a href="#">Projects List</a>
-            <a href="#">New Task Form</a>
+            <NavLink to="/all-tasks">All Tasks</NavLink>
+            <NavLink to="/projects-list">Projects List</NavLink>
+            <NavLink to="/new-task-form">New Task Form</NavLink>
         </div>
      )
 }
