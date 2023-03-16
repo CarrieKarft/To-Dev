@@ -1,0 +1,40 @@
+{
+    "tasks": [
+      {
+        "id": 1,
+        "task": "Plan out design",
+        "project": "React App",
+        "completeBy": "03-20-23"
+      },
+      {
+        "id": 2,
+        "task": "map out component hierarchy",
+        "project": "React App",
+        "completeBy": "03-20-23"
+      },
+      {
+        "id": 3,
+        "task": "Plan out design",
+        "project": "React App",
+        "completeBy": "03-20-23"
+      },
+      {
+        "id": 4,
+        "task": "Plan out design",
+        "project": "React App",
+        "completeBy": "03-20-23"
+      },
+      {
+        "id": 5,
+        "task": "Plan out design",
+        "project": "React App",
+        "completeBy": "03-20-23"
+      },
+      {
+        "id": 6,
+        "task": "Plan out design",
+        "project": "React App",
+        "completeBy": "03-20-23"
+      }
+    ]
+  }
