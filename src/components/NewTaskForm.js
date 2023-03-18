@@ -5,10 +5,28 @@ function NewTaskForm() {
     const [completeBy, setCompleteBy] = useState("")
     const [projectName, setProjectName] = useState("ReactProject")
     // console.log(taskName)
+
+    // const newTaskData = {
+    //     taskName,
+    //     completeBy,
+    //     projectName
+    // }
+
+    // console.log(newTaskData)
+    function handleSubmit(e) {
+        e.preventDefault();
+        const newTaskData = {
+            taskName,
+            completeBy,
+            projectName
+        }
+        console.log(newTaskData)
+    }
+
     return (
         <div>
-            <form>
-
+            <form onSubmit={handleSubmit}>
+                <h2>Add A New Task</h2>
                 <label>Task Name:
                     <input 
                     type="text" 
@@ -24,7 +42,7 @@ function NewTaskForm() {
                     value={projectName}
                     onChange={e => {
                         setProjectName(e.target.value)
-                        console.log(projectName)
+                        // console.log(projectName)
                     }}
                 >
                     <option value="ReactProject">React Project</option>
@@ -38,7 +56,7 @@ function NewTaskForm() {
                     value={completeBy}
                     onChange={e => {
                         setCompleteBy(e.target.value)
-                        console.log(completeBy)
+                        // console.log(completeBy)
                     }}
                      />
                 </label>
