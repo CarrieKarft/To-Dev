@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function NewTaskForm() {
+function NewTaskForm({ setData, data }) {
     const [task, setTask] = useState("")
     const [completeBy, setCompleteBy] = useState("")
     const [project, setProject] = useState("ReactProject")
@@ -21,7 +21,10 @@ function NewTaskForm() {
             body: JSON.stringify(newTaskData),
           })
           .then(r => r.json())
-          .then(addedTask => console.log(addedTask))
+          .then(addedTask => {
+            console.log(addedTask)
+            setData([...data, addedTask])
+        })
     }
 
     return (
