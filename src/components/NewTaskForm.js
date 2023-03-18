@@ -1,26 +1,27 @@
 import React, {useState} from "react";
 
 function NewTaskForm() {
-    const [taskName, setTaskName] = useState("")
+    const [task, setTask] = useState("")
     const [completeBy, setCompleteBy] = useState("")
-    const [projectName, setProjectName] = useState("ReactProject")
-    // console.log(taskName)
+    const [project, setProject] = useState("ReactProject")
 
-    // const newTaskData = {
-    //     taskName,
-    //     completeBy,
-    //     projectName
-    // }
-
-    // console.log(newTaskData)
     function handleSubmit(e) {
         e.preventDefault();
         const newTaskData = {
-            taskName,
+            task,
             completeBy,
-            projectName
+            project
         }
-        console.log(newTaskData)
+        // console.log(newTaskData)
+        fetch("http://localhost:8000/tasks", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newTaskData),
+          })
+          .then(r => r.json())
+          .then(addedTask => console.log(addedTask))
     }
 
     return (
@@ -30,19 +31,17 @@ function NewTaskForm() {
                 <label>Task Name:
                     <input 
                     type="text" 
-                    value={taskName}
+                    value={task}
                     onChange={e => {
-                        setTaskName(e.target.value)
-                        // console.log(taskName)
+                        setTask(e.target.value)
                     }}
                     />
                 </label>
 
                 <select
-                    value={projectName}
+                    value={project}
                     onChange={e => {
-                        setProjectName(e.target.value)
-                        // console.log(projectName)
+                        setProject(e.target.value)
                     }}
                 >
                     <option value="ReactProject">React Project</option>
@@ -56,7 +55,6 @@ function NewTaskForm() {
                     value={completeBy}
                     onChange={e => {
                         setCompleteBy(e.target.value)
-                        // console.log(completeBy)
                     }}
                      />
                 </label>
