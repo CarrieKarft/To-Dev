@@ -5,6 +5,24 @@ function NewTaskForm({ setData, data }) {
     const [completeBy, setCompleteBy] = useState("")
     const [project, setProject] = useState("ReactProject")
 
+    const inputStyling = {
+        display: "block",
+        width: "300px",
+        // height: "100%",
+        padding: "6px",
+        margin: "10px 6px 6px",
+        // position: "absolute",
+        // top: "50%",
+        left: "50%",
+        // justify-content: "center",
+        // textAlign: "center",
+        // textDecoration: "none",
+    }
+
+    // const formStyling = { 
+    //     display: "block",
+    // }
+
     function handleSubmit(e) {
         e.preventDefault();
         const newTaskData = {
@@ -29,10 +47,14 @@ function NewTaskForm({ setData, data }) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form 
+            // style={formStyling}
+            onSubmit={handleSubmit}
+            >
                 <h2>Add A New Task</h2>
                 <label>Task Name:
                     <input 
+                    style={inputStyling}
                     type="text" 
                     value={task}
                     onChange={e => {
@@ -42,6 +64,7 @@ function NewTaskForm({ setData, data }) {
                 </label>
 
                 <select
+                    style={inputStyling}
                     value={project}
                     onChange={e => {
                         setProject(e.target.value)
@@ -54,6 +77,7 @@ function NewTaskForm({ setData, data }) {
 
                 <label>Complete By:
                     <input 
+                    style={inputStyling}
                     type="text"
                     value={completeBy}
                     onChange={e => {
@@ -62,7 +86,10 @@ function NewTaskForm({ setData, data }) {
                      />
                 </label>
 
-                <input type="submit" />
+                <input 
+                style={inputStyling}
+                type="submit" 
+                />
 
             </form>
         </div>
