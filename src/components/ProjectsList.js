@@ -4,21 +4,36 @@ import Project from "./Project";
 function ProjectList({ data, projectList, setProjectList }) {
     const [newProjectName, setNewProjectName] = useState('')
     const mapingprojects = projectList.map(project => {
-        return <Project data={data} key={project} project={project}/>
+        return <Project data={data} key={project.newProjectName} project={project.newProjectName}/>
     })
+    // console.log(newProjectName)
 
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        const newProjectData = {
+            newProjectName,
+        }
+        console.log(newProjectData)
+        fetch("http://localhost:8000/projects", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newProjectData),
+        })
+        .then(r => r.json())
+        .then(addedProject => {
+            setProjectList([...projectList, addedProject])
+        })
+    }
 
  return (
-    <div>
-        <h1>Projects List</h1>
-        <form onSubmit={(e) => {
-            e.preventDefault()
-            // console.log(newProjectName)
-            // setProjectList([...projectList, newProjectName])
-            // console.log(projectList)
-
-        }}>
-            <label>New Project Name
+    <div className="projectList">
+        <h1>Projects</h1>
+        <form onSubmit={handleSubmit} >
+       
+            <label>New Project Name&nbsp;
                 <input 
                     type="text" 
                     value={newProjectName}
@@ -32,7 +47,9 @@ function ProjectList({ data, projectList, setProjectList }) {
                 type="submit" 
             />
         </form>
-        {mapingprojects}
+        <div className="projectDiv">
+            {mapingprojects}
+        </div>
     </div>
  )
 }
