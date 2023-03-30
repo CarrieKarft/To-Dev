@@ -1,21 +1,35 @@
 import React from "react";
+import { Link, Route } from "react-router-dom";
+import ProjectTasks from "./ProjectTasks";
+
 
 function Project({ project, data }) {
-    // console.log(project)
-    // console.log(data.project)
-    const filteringData = data.filter(task => {
-        return task.project === project
-    })
-    console.log(filteringData)
+    // console.log("project:", project)
+    // console.log("data:", data)
+    // const filteringData = data.filter(task => {
+    //     return task.project === project
+    // })
+    // console.log(filteringData)
+        console.log(project)
+        const filteringAndMappingData = data.filter(task => {
+            return task.project === project
+        }).map(filteredTask => {
+            // console.log(filteredTask)
+            return (
+                <Route>
+                    <ProjectTasks exact path="/projects-list/tasks" key={filteredTask} filteredTask={filteredTask}/>
+                </Route>
+            )
+        })
+        console.log(filteringAndMappingData)
+        
 
     return (
-        <div>
+        <div className="project">
             <h2>{project}</h2>
-            {/* <h1>Projects List</h1>
-            <card>React Project</card>
-            <card>JavaScript Project</card>
-            <card>Python Project</card> */}
-            <ul>{filteringData.map(projectTask => <li key={projectTask.id}>{projectTask.task}</li>)}</ul>
+            <Link to="/projects-list/tasks">Click To View Tasks</Link>
+            {filteringAndMappingData}
+            {/* <ul>{filteringData.map(projectTask => <li key={projectTask.id}>{projectTask.task}</li>)}</ul> */}
         </div>
      )
 }
