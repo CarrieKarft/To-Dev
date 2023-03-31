@@ -14,8 +14,14 @@ code {
 
 .app {
   display: flex;
+  height: 100%;
   background-color: #f48d79;
   
+}
+
+html {
+  height: 100%;
+  background-color: #f48d79;
 }
 .projectList {
   /* background-color: aqua; */

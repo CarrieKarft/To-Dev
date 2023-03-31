@@ -3,25 +3,25 @@ import { Link, Route } from "react-router-dom";
 import ProjectTasks from "./ProjectTasks";
 
 
-function Project({ project, data }) {
+function Project({ project, data, onDeleteTask }) {
     // console.log("project:", project)
     // console.log("data:", data)
     // const filteringData = data.filter(task => {
     //     return task.project === project
     // })
     // console.log(filteringData)
-        console.log(project)
+        // console.log(project)
         const filteringAndMappingData = data.filter(task => {
             return task.project === project
         }).map(filteredTask => {
             // console.log(filteredTask)
             return (
                 <Route>
-                    <ProjectTasks exact path="/projects-list/tasks" key={filteredTask} filteredTask={filteredTask}/>
+                    <ProjectTasks exact path="/projects-list/tasks" key={filteredTask} filteredTask={filteredTask} onDeleteTask={onDeleteTask}/>
                 </Route>
             )
         })
-        console.log(filteringAndMappingData)
+        // console.log(filteringAndMappingData)
         
 
     return (

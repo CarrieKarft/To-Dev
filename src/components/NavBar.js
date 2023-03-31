@@ -3,19 +3,21 @@ import {NavLink} from "react-router-dom"
 
 function NavBar() {
     const linkStyles = {
-        width: "50px",
+        width: "100%",
+        fontSize: "larger",
+        textAlign: "center",
         padding: "12px",
         margin: "0 6px 6px",
         textDecoration: "none",
-        color: "blue",
+        color: "white",
       };
 
     return (
-        <div>
+        <div className="navBar">
             <h1>Navigation</h1>
             <NavLink to="/all-tasks" style={linkStyles}>All Tasks</NavLink>
-            <NavLink to="/projects-list" style={linkStyles}>Projects List</NavLink>
-            <NavLink to="/new-task-form" style={linkStyles}>New Task Form</NavLink>
+            <NavLink to="/projects-list" style={linkStyles}>Projects</NavLink>
+            <NavLink to="/new-task-form" style={linkStyles}>Add A Task</NavLink>
         </div>
      )
 }

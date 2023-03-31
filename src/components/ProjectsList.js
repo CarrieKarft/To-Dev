@@ -1,10 +1,13 @@
 import React, {useState} from "react";
 import Project from "./Project";
 
-function ProjectList({ data, projectList, setProjectList }) {
+function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
     const [newProjectName, setNewProjectName] = useState('')
+    const [projectDetails, setProjectDetails] = useState("")
     const mapingprojects = projectList.map(project => {
-        return <Project data={data} key={project.newProjectName} project={project.newProjectName}/>
+        return (
+        <Project data={data} key={project.newProjectName} project={project.newProjectName} onDeleteTask={onDeleteTask}/>
+        )
     })
     // console.log(newProjectName)
 
@@ -13,6 +16,7 @@ function ProjectList({ data, projectList, setProjectList }) {
         e.preventDefault()
         const newProjectData = {
             newProjectName,
+            projectDetails
         }
         console.log(newProjectData)
         fetch("http://localhost:8000/projects", {
@@ -39,6 +43,16 @@ function ProjectList({ data, projectList, setProjectList }) {
                     value={newProjectName}
                     onChange={e => {
                         setNewProjectName(e.target.value)
+                        // console.log(e.target.value)
+                    }}
+                />
+            </label>
+            <label>Project Details and Description&nbsp;
+                <input 
+                    type="text" 
+                    value={projectDetails}
+                    onChange={e => {
+                        setProjectDetails(e.target.value)
                         // console.log(e.target.value)
                     }}
                 />
