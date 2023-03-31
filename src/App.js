@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import AllTasksList from './components/AllTaskList';
 import ProjectList from './components/ProjectsList';
 import NewTaskForm from './components/NewTaskForm';
+import ProjectTasks from './components/ProjectTasks';
 
 
 
@@ -55,12 +56,15 @@ function App() {
 
   return (
     <div className='app'>
-      <Route>
-          <NavBar exact path="/"/>
+      <Route >
+          <NavBar />
       </Route>
       <Switch>
         <Route path="/all-tasks">
           <AllTasksList data={data} onDeleteTask={handleTaskDelete}/>
+        </Route>
+        <Route exact path="/project-tasks">
+          <ProjectTasks data={data} projectList={projectList}/>
         </Route>
         <Route path="/projects-list">
           <ProjectList data={data} projectList={projectList} setProjectList={setProjectList} onDeleteTask={handleTaskDelete}/>
