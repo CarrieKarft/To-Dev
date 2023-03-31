@@ -1,27 +1,20 @@
 import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
 
-function NewTaskForm({ setData, data }) {
+function NewTaskForm({ setData, data, projectList }) {
     const [task, setTask] = useState("")
     const [completeBy, setCompleteBy] = useState("")
-    const [project, setProject] = useState("ReactProject")
+    const [project, setProject] = useState("React App")
+    let history = useHistory();
 
     const inputStyling = {
         display: "block",
         width: "300px",
-        // height: "100%",
         padding: "6px",
         margin: "10px 6px 6px",
-        // position: "absolute",
-        // top: "50%",
         left: "50%",
-        // justify-content: "center",
-        // textAlign: "center",
-        // textDecoration: "none",
-    }
-
-    // const formStyling = { 
-    //     display: "block",
-    // }
+       
+    };
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -40,21 +33,27 @@ function NewTaskForm({ setData, data }) {
           })
           .then(r => r.json())
           .then(addedTask => {
-            console.log(addedTask)
-            setData([...data, addedTask])
+            const newTaskData = [...data]
+            newTaskData.unshift(addedTask)
+            
+            // console.log(addedTask)
+            setData(newTaskData)
         })
+
+        history.push("/all-tasks")
     }
 
     return (
-        <div>
+        <div className=" newTask">
             <form 
             // style={formStyling}
+            className="form"
             onSubmit={handleSubmit}
             >
-                <h2>Add A New Task</h2>
+                <h1>Add A New Task</h1>
                 <label>Task Name:
                     <input 
-                    style={inputStyling}
+                    // style={inputStyling}
                     type="text" 
                     value={task}
                     onChange={e => {
@@ -64,20 +63,21 @@ function NewTaskForm({ setData, data }) {
                 </label>
 
                 <select
-                    style={inputStyling}
+                    // style={inputStyling}
+                    className="select"
                     value={project}
                     onChange={e => {
                         setProject(e.target.value)
                     }}
-                >
-                    <option value="ReactProject">React Project</option>
-                    <option value="JavaScriptProject">JavaScript Project</option>
-                    <option value="PythonProject">Python Project</option>
+                >   {projectList.map(project => <option value={project.newProjectName} key={project.newProjectName}>{project.newProjectName}</option>)}
+                    {/* <option value="React App">React Project</option>
+                    <option value="JavaScript App">JavaScript Project</option>
+                    <option value="Python App">Python Project</option> */}
                 </select>
 
                 <label>Complete By:
                     <input 
-                    style={inputStyling}
+                    // style={inputStyling}
                     type="text"
                     value={completeBy}
                     onChange={e => {
@@ -87,7 +87,9 @@ function NewTaskForm({ setData, data }) {
                 </label>
 
                 <input 
-                style={inputStyling}
+                // style={inputStyling}
+                className="select"
+                id="select"
                 type="submit" 
                 />
 
