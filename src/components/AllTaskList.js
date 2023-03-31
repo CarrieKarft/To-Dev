@@ -1,23 +1,24 @@
 import React from "react";
 
-function AllTasksList({ data }) {
-    console.log(data)
+function AllTasksList({ data, onDeleteTask }) {
+    // console.log(data)
     const taskMap = data.map(taskData => {
         return (
-            <li key={taskData.id}>
+            <div key={taskData.id} className="task">
                 <h4>{taskData.task.toUpperCase()}</h4>
                 <p>Project Name: {taskData.project}</p>
                 <p>Complete By: {taskData.completeBy}</p>
-            </li>
+                <button onClick={() => onDeleteTask(taskData)}>Completed!</button>
+            </div>
         )
     })
 
     return (
-        <div>
+        <div className="tasklist">
             <h1>All Tasks</h1>
-            <ul>
+            <div>
                 {taskMap}
-            </ul>
+            </div>
         </div>
      )
 }
