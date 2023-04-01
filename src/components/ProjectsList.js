@@ -3,10 +3,10 @@ import Project from "./Project";
 
 function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
     const [newProjectName, setNewProjectName] = useState('')
-    const [projectDetails, setProjectDetails] = useState("")
+    const [projectDetails, setProjectDetails] = useState('')
     const mapingprojects = projectList.map(project => {
         return (
-        <Project data={data} key={project.newProjectName} project={project.newProjectName} onDeleteTask={onDeleteTask}/>
+        <Project data={data} key={project.id} id={project.id} project={project.projectName} details={project.projectDetails} onDeleteTask={onDeleteTask}/>
         )
     })
     // console.log(newProjectName)
@@ -15,8 +15,8 @@ function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
     function handleSubmit(e) {
         e.preventDefault()
         const newProjectData = {
-            newProjectName,
-            projectDetails
+            projectName: newProjectName,
+            projectDetails: projectDetails
         }
         console.log(newProjectData)
         fetch("http://localhost:8000/projects", {
@@ -39,6 +39,7 @@ function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
        
             <label>New Project Name&nbsp;
                 <input 
+                    className="projectName"
                     type="text" 
                     value={newProjectName}
                     onChange={e => {
@@ -48,7 +49,8 @@ function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
                 />
             </label>
             <label>Project Details and Description&nbsp;
-                <input 
+                <textarea 
+                    className="details"
                     type="text" 
                     value={projectDetails}
                     onChange={e => {
