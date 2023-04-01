@@ -63,8 +63,8 @@ function App() {
         <Route path="/all-tasks">
           <AllTasksList data={data} onDeleteTask={handleTaskDelete}/>
         </Route>
-        <Route exact path="/project-tasks">
-          <ProjectTasks data={data} projectList={projectList}/>
+        <Route exact path="/projects-list/:id">
+          <ProjectTasks data={data} projectList={projectList} onDeleteTask={handleTaskDelete}/>
         </Route>
         <Route path="/projects-list">
           <ProjectList data={data} projectList={projectList} setProjectList={setProjectList} onDeleteTask={handleTaskDelete}/>
