@@ -15,7 +15,7 @@ function NavBar() {
     return (
         <div className="navBar">
             <h1>Navigation</h1>
-            <NavLink to="/all-tasks" style={linkStyles}>All Tasks</NavLink>
+            <NavLink to="/" style={linkStyles}>All Tasks</NavLink>
             <NavLink to="/projects-list" style={linkStyles}>Projects</NavLink>
             <NavLink to="/new-task-form" style={linkStyles}>Add A Task</NavLink>
         </div>
