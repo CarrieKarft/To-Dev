@@ -1,7 +1,7 @@
 import React from "react";
 
 function AllTasksList({ data, onDeleteTask }) {
-    // console.log(data)
+
     const taskMap = data.map(taskData => {
         return (
             <div key={taskData.id} className="task">
