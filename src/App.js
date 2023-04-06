@@ -13,14 +13,11 @@ import ProjectTasks from './components/ProjectTasks';
 function App() {
   const [data, setData] = useState([])
   const [projectList, setProjectList] = useState([])
-//  "React App", "JavaScript App", "Python App"
 
   useEffect(() => {
     fetch("http://localhost:8000/tasks")
     .then(r => r.json())
     .then(data => {
-      // data.reverse()
-      // console.log(data)
       setData(data)
     })
   }, [])
@@ -29,11 +26,10 @@ function App() {
     fetch("http://localhost:8000/projects")
     .then(r => r.json())
     .then(data => {
-      // console.log(data)
       setProjectList(data)
     })
   }, [])
-  // console.log(projectList)
+
 
   function handleTaskDelete(taskData) {
     fetch(`http://localhost:8000/tasks/${taskData.id}`,
@@ -60,7 +56,7 @@ function App() {
           <NavBar />
       </Route>
       <Switch>
-        <Route path="/all-tasks">
+        <Route exact path="/">
           <AllTasksList data={data} onDeleteTask={handleTaskDelete}/>
         </Route>
         <Route exact path="/projects-list/:id">
