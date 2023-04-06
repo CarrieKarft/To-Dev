@@ -24,7 +24,6 @@ html {
   background-color: #f48d79;
 }
 .projectList {
-  /* background-color: aqua; */
   text-align: center;
   width: 100%;
   margin: auto 0;
@@ -48,19 +47,15 @@ html {
 .projectList form {
   display: flex;
   flex-direction: column;
-  /* width: 60%; */
   align-items: center;
 }
 
 .projectDiv {
-  /* background-color: aqua; */
-  /* text-align: center; */
   width: 100%;
   margin: auto 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* flex-direction: column; */
 }
 
 .project {
@@ -69,12 +64,10 @@ html {
   text-align: center;
   background-color: #ffc0b4;
   width: 40%;
-  /* height: 40%; */
   display: inline;
 }
 
 .tasklist {
-  /* background-color: aqua; */
   text-align: center;
   width: 100%;
   margin: auto 0;
@@ -88,10 +81,7 @@ html {
 }
 
 .newTask {
-  /* background-color: aqua; */
   display: flex;
-  /* flex-wrap: wrap; */
-  /* text-align: center; */
   width: 100%;
   padding: 20px;
   align-content: center;
@@ -100,19 +90,11 @@ html {
 .form {
   display: flex;
   flex-direction: column;
-  /* justify-items: center; */
-  /* align-items: center; */
   justify-content: center;
   text-align: center;
   width: 90%;
   margin: 20px;
   padding: 10px;
-  /* left: 20%; */
-  /* height: 60%; */
-  /* align-content: center; */
-  /* text-align: center;
-  width: 100%;
-  margin: auto 0; */
 }
 
 .select {
@@ -133,17 +115,12 @@ html {
 
 .navBar {
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   width: 20%;
   height: 10%;
   margin: 10px;
   padding: 10px;
-  /* text-align: center; */
   justify-content: center;
-  /* position: fixed;
-  top: 0px;
-  width: 100%; */
 }
 .active { 
   padding: 20px;
@@ -162,10 +139,6 @@ h3 {
 .taskProject h2 {
   color: white;
 }
-
-/* h2 {
-  color: white;
-} */
 
 label {
   color: white;
