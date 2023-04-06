@@ -1,18 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "task": "Plan out design",
-      "project": "React App",
-      "completeBy": "03-20-23"
-    },
-    {
-      "id": 2,
-      "task": "map out component hierarchy",
-      "project": "React App",
-      "completeBy": "03-20-23"
-    },
-    {
       "id": 3,
       "task": "Style app",
       "project": "JavaScript App",
@@ -23,37 +11,28 @@
       "task": "Learn how to sort arrays",
       "project": "JavaScript App",
       "completeBy": "03-20-23"
-    },
-    {
-      "id": 5,
-      "task": "Go over 'Thinking in React'",
-      "project": "React App",
-      "completeBy": "03-20-23"
-    },
-    {
-      "id": 6,
-      "task": "Make an informitive README",
-      "project": "JavaScript App",
-      "completeBy": "03-20-23"
-    },
-    {
-      "task": "asd",
-      "completeBy": "noon",
-      "project": "JavaScript App",
-      "id": 7
-    },
-    {
-      "task": "cool task",
-      "completeBy": "Monday",
-      "project": "JavaScript App",
-      "id": 8
-    },
-    {
-      "task": "create ruby app",
-      "completeBy": "tomorrow",
-      "project": "Ruby App",
-      "id": 9
     }
   ],
-  "projects": ["React App", "JavaScript App"]
+  "projects": [
+    {
+      "id": 1,
+      "projectName": "React App",
+      "projectDetails": "a to do list app made with React"
+    },
+    {
+      "id": 2,
+      "projectName": "JavaScript App",
+      "projectDetails": "a simple website to show off my cats"
+    },
+    {
+      "projectName": "Python App",
+      "projectDetails": "making AI",
+      "id": 3
+    },
+    {
+      "projectName": "New Project",
+      "projectDetails": "details",
+      "id": 4
+    }
+  ]
 }
