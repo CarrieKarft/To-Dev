@@ -9,7 +9,6 @@ function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
         <Project data={data} key={project.id} id={project.id} project={project.projectName} details={project.projectDetails} onDeleteTask={onDeleteTask}/>
         )
     })
-    // console.log(newProjectName)
 
 
     function handleSubmit(e) {
@@ -29,7 +28,9 @@ function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
         .then(r => r.json())
         .then(addedProject => {
             setProjectList([...projectList, addedProject])
-        })
+        });
+        setNewProjectName('');
+        setProjectDetails('');
     }
 
  return (
@@ -55,7 +56,6 @@ function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
                     value={projectDetails}
                     onChange={e => {
                         setProjectDetails(e.target.value)
-                        // console.log(e.target.value)
                     }}
                 />
             </label>
