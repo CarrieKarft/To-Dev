@@ -1,3 +1,15 @@
+# To Dev
+
+To Dev is a to-do application for developers to allow them to break projects down into tasks, and store all of their project task lists in one place. To Dev is made with React. A user of this application is able to add and delete tasks, add new projects, and assign the tasks to different projects. There is a a page That lists all the projects, and each project has its own page as well.
+
+# Json server
+
+To run the local json server type the command $json-server --watch data/db.json --port 8000 into your terminal.
+
+# Contirbuting
+
+If you would like to contribute fork and clone this repo, and submit a pull request. This project is a course requirement, so no contributions will be accepted untill after this project has been graded.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +80,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+"making sure that github repon has the updated code before submitting my project"
