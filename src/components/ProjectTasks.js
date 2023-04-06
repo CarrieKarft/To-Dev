@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function ProjectTasks({ data, onDeleteTask }) {
     const [projectMatch, setProjectMatch] = useState(null);
 
     const { id } = useParams()
-    // console.log(params)
-
-    // const id = 3
+    
     useEffect(() => {
         fetch(`http://localhost:8000/projects/${id}`)
         .then(r => r.json())
@@ -15,25 +13,21 @@ function ProjectTasks({ data, onDeleteTask }) {
     },[id])
 
     if (!projectMatch) return <h2>Loading...</h2>
-    // console.log(projectMatch)
+ 
     const { projectName, projectDetails } = projectMatch
-    console.log(projectName)
-    console.log(projectDetails)
     const taskMap = data.map(task => {
         if (task.project === projectName) {
             return (
                 <div key={task.id} className="task">
-                    <h4>{task.task}</h4>
-                    <p>{task.completeBy}</p>
+                    <h4><strong>Task:</strong> {task.task}</h4>
+                    <p><strong>Complete By:</strong> {task.completeBy}</p>
                     <button onClick={() => onDeleteTask(task)}>Completed!</button>
                 </div>
             )
-        }
+        } 
         return null
     })
-
-    // console.log(projectMatch.newProjectName)
- 
+    
  
     return (
         <div className="taskProject">
@@ -41,6 +35,7 @@ function ProjectTasks({ data, onDeleteTask }) {
             <h3>{projectDetails}</h3>
             <h2>{projectName} Tasks</h2>
             <ul>{taskMap}</ul>
+            <Link to="/new-task-form">To Add A Task Click Here</Link>
        
         </div>
     )
