@@ -20,15 +20,21 @@ function App() {
     .then(data => {
       setData(data)
     })
-  }, [])
 
-  useEffect(() => {
     fetch("http://localhost:8000/projects")
     .then(r => r.json())
     .then(data => {
       setProjectList(data)
     })
   }, [])
+
+  // useEffect(() => {
+  //   fetch("http://localhost:8000/projects")
+  //   .then(r => r.json())
+  //   .then(data => {
+  //     setProjectList(data)
+  //   })
+  // }, [])
 
 
   function handleTaskDelete(taskData) {
@@ -52,9 +58,7 @@ function App() {
 
   return (
     <div className='app'>
-      <Route >
           <NavBar />
-      </Route>
       <Switch>
         <Route exact path="/">
           <AllTasksList data={data} onDeleteTask={handleTaskDelete}/>
