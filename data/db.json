@@ -11,6 +11,12 @@
       "task": "Learn how to sort arrays",
       "project": "JavaScript App",
       "completeBy": "03-20-23"
+    },
+    {
+      "task": "task ",
+      "completeBy": "noon",
+      "project": "React App",
+      "id": 5
     }
   ],
   "projects": [
@@ -33,6 +39,11 @@
       "projectName": "New Project",
       "projectDetails": "details",
       "id": 4
+    },
+    {
+      "projectName": "test project",
+      "projectDetails": "details",
+      "id": 5
     }
   ]
 }
