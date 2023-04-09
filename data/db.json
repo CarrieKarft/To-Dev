@@ -13,10 +13,16 @@
       "completeBy": "03-20-23"
     },
     {
-      "task": "task ",
-      "completeBy": "noon",
-      "project": "React App",
+      "task": "hodfhoiehdfoih",
+      "completeBy": "aidshfoihd",
+      "project": "second test project",
       "id": 5
+    },
+    {
+      "task": "qqqtttqttqttqtqtqt",
+      "completeBy": "erererrererrerererrerererer",
+      "project": "qqqttqtqttqtqt",
+      "id": 6
     }
   ],
   "projects": [
@@ -32,18 +38,8 @@
     },
     {
       "projectName": "Python App",
-      "projectDetails": "making AI",
+      "projectDetails": "creating AI",
       "id": 3
-    },
-    {
-      "projectName": "New Project",
-      "projectDetails": "details",
-      "id": 4
-    },
-    {
-      "projectName": "test project",
-      "projectDetails": "details",
-      "id": 5
     }
   ]
 }
