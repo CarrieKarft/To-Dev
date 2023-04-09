@@ -28,14 +28,6 @@ function App() {
     })
   }, [])
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/projects")
-  //   .then(r => r.json())
-  //   .then(data => {
-  //     setProjectList(data)
-  //   })
-  // }, [])
-
 
   function handleTaskDelete(taskData) {
     fetch(`http://localhost:8000/tasks/${taskData.id}`,
