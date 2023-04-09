@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Project from "./Project";
+import ProjectForm from "./ProjectForm";
 
 function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
     const [newProjectName, setNewProjectName] = useState('')
@@ -35,34 +36,8 @@ function ProjectList({ data, projectList, setProjectList, onDeleteTask }) {
 
  return (
     <div className="projectList">
+        <ProjectForm newProjectName={newProjectName} projectDetails={projectDetails} setNewProjectName={setNewProjectName} setProjectDetails={setProjectDetails} onHandleSubmit={handleSubmit}/>
         <h1>Projects</h1>
-        <form onSubmit={handleSubmit} >
-       
-            <label>New Project Name&nbsp;
-                <input 
-                    className="projectName"
-                    type="text" 
-                    value={newProjectName}
-                    onChange={e => {
-                        setNewProjectName(e.target.value)
-                        // console.log(e.target.value)
-                    }}
-                />
-            </label>
-            <label>Project Details and Description&nbsp;
-                <textarea 
-                    className="details"
-                    type="text" 
-                    value={projectDetails}
-                    onChange={e => {
-                        setProjectDetails(e.target.value)
-                    }}
-                />
-            </label>
-            <input 
-                type="submit" 
-            />
-        </form>
         <div className="projectDiv">
             {mapingprojects}
         </div>
